@@ -17,6 +17,7 @@ router.post("/api/auth", async (req, res) => {
   if (token) {
     res
       .cookie("auth", token, { maxAge: 900000, httpOnly: true })
+      .redirect("/dashboard");
     return;
   }
   res.status(500).json({ error: "Something went wrong" });
