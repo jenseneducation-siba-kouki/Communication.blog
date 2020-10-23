@@ -7,7 +7,7 @@ router.get("/", (req, res) => res.render("pages/index"));
 router.get("/signup", (req, res) => res.render("pages/signup"));
 router.get("/login", (req, res) => res.render("pages/login"));
 router.get("/dashboard", auth, (req, res) =>
-  res.render("pages/dashboard")
+  res.render("pages/dashboard", { user: req.user })
 );
 
 
