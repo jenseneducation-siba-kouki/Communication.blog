@@ -75,4 +75,13 @@ function createForm(e) {
     console.log("Please fill in field(s)");
     return;
   }
+  fetch("/api/posts", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(input),
+  })
+    .then((res) => res.json())
+    .then((data) => (location.href = "/api/posts"));
 }

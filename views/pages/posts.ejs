@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<nav class="navbar">
+  <h1>
+    <a href="/dashboard">Dashboard | <%= user.name %></a>
+  </h1>
+  <ul>
+    <li><a href="/logout">Log out</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <main class="content">
+    <article class="blogs">
+      <% if(blogs.length > 0) { %>
+      <h2>All blogs</h2>
+      <hr />
+      <div class="blog-item">
+        <% blogs.forEach((blog, index) => { %>
+        <a href="/api/posts/<%= blog._id %>"
+          >#<%= index + 1 %> <%= blog.title %>
+        </a>
+        <% }) %>
+      </div>
+      <% } else { %>
+      <h2>No blogs</h2>
+      <hr />
+      <% } %>
+    </article>
+  </main>
+</div>
+<%- include('../partials/footer.ejs') %>
