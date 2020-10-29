@@ -12,5 +12,8 @@ router.get("/dashboard", auth, (req, res) =>
 router.get("/create", auth, (req, res) =>
   res.render("pages/create", { user: req.user })
 );
+router.get("/logout", (req, res) => {
+  res.clearCookie("auth").redirect("/");
+});
 
 module.exports = router;

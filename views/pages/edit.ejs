@@ -9,19 +9,23 @@
 </nav>
 <div class="container">
   <main class="content">
-    <form id="post-form">
+    <form action="/api/posts/<%= blog._id %>" method="post">
       <input
         type="text"
         name="title"
         id="title"
+        value="<%= blog.title %>"
         placeholder="Choose a title for your blog"
       />
-      <textarea
-        name="content"
-        id="content"
-        placeholder="Blog text goes here"
-      ></textarea>
-      <button>Create</button>
+      <textarea name="content" id="text" placeholder="Blog text goes here">
+<%= blog.content %></textarea
+      >
+      <button>Save</button>
+    </form>
+    <form action="/api/posts/delete/<%= blog._id %>" method="post">
+      <button>
+        <span class="lnr lnr-trash"></span>
+      </button>
     </form>
   </main>
 </div>

@@ -1,6 +1,7 @@
 document.querySelectorAll("form").forEach((item) => {
   if (item.id === "login-form") item.addEventListener("submit", loginUser);
   if (item.id === "signup-form") item.addEventListener("submit", registerUser);
+  if (item.id === "post-form") item.addEventListener("submit", createForm);
 });
 
 function registerUser(e) {
